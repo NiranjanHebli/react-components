@@ -1,9 +1,12 @@
 import React from 'react';
-import { Card } from './components/Card';
-import { Alert } from './components/Alert';
-import { Badge } from './components/Badge';
-import { Button } from './components/Button';
-import { Profile } from './components/Profile';
+import { Card } from './components/ui/Card';
+import { Alert } from './components/ui/Alert';
+import { Badge } from './components/ui/Badge';
+import { Button } from './components/ui/Button';
+import { Profile } from './components/ui/Profile';
+import { NotificationBanner } from './components/ui/NotificationBanner';
+import { UserAvatar } from './components/ui/UserAvatar';
+import { FeatureCard } from './components/ui/FeatureCard';
 
 function App() {
   return (
@@ -23,6 +26,24 @@ function App() {
         <Button label="Click Me" />
         
         <Profile name="John Doe" />
+
+        <NotificationBanner 
+            message="Your profile has been updated successfully" 
+            type="success" 
+            onClose={() => console.log('closed')} 
+          />
+          
+          <UserAvatar 
+            name="John Doe" 
+            role="Senior Designer" 
+            imageUrl="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" 
+          />
+          
+          <FeatureCard 
+            title="Cloud Storage" 
+            description="Access your files from anywhere in the world with our secure cloud storage solution." 
+            linkText="Learn more" 
+          />
       </div>
     </div>
   );
